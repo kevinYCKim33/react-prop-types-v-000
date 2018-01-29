@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import PropTypes from 'prop-types';
 
 class Order extends React.Component {
@@ -32,3 +34,18 @@ Order.propTypes = {
     orderedAt: PropTypes.number.isRequired // We're using UNIX timestamps here
   }).isRequired
 };
+
+ReactDOM.render(
+  <div>
+    <Order
+      cone= "filler"
+      size= "big"
+      scoops= {['vanilla', 'chocolate']}
+      orderInfo= {{
+        customerName: "Kevin",
+        orderedAt: 1234
+      }}
+    />
+  </div>,
+  document.getElementById('root')
+)
